@@ -1,9 +1,14 @@
 version: '3'
 services:
   api:
+    environment:
+        - SECRET_MESSAGE=This is a secret message
+        - DEBUG=0
     build: .
     ports:
       - "8090:8090"
+    volumes:
+        - ./src:/app/
   ubuntu:
     image: "ubuntu:latest"
     ports:
