@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    app: dockerlab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockerlab
+  template:
+    metadata:
+      labels:
+        app: dockerlab
+    spec:
+      containers:
+      - name: dockerlab
+        image: dockerlab:latest
+        ports:
+        - containerPort: 8090

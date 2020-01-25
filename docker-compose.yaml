@@ -1,0 +1,11 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - "8090:8090"
+  ubuntu:
+    image: "ubuntu:latest"
+    ports:
+        - "8091:80"
+    tty: true
